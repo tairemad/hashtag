@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What's Your Hashtag?</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/animate.css' />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row headerSection">
+        <img src="/images/Twitter-bird-clipart.jpg" width="150" height="150">
+        <div class="col-md-offset-2 col-md-8">
+            <h1 class="pHeader">What's Your <span>#HashTag</span>?</h1>
+            <form action="/" method="post">
+                <div class="form-group">
+                    <input type="text" id="hashtag" placeholder="Search hashtag" name="hashtag" class="form-control sForm">
+                </div>
+                <span class="input-group-btn">
+                <button class="btn btn-ghost" id="searchHash" type="submit">Search</button>
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div id="timeline" class="col-md-12 showTweets" data-columns>
+            <% tweets.forEach(function(tweets) { %>
+            <div class="item userTweet animated fadeInUp">
+                <img src="<%= tweets.profile_img %> " class="profileImg pull-left">
+                <p class="name"><%= tweets.name %></p>
+                <a class="screenName"><%= tweets.screen_name %></a>
+                <p class="text clearfix"><%= tweets.text %></p>
+            </div>
+            <% }); %>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/javascripts/salvattore.min.js"></script>
+<script type="javascript">
+    $(function () {
+        $('#searchHash').on('click', function () {
+            var $val = $('#hashtag').val();
+            console.log($val);
+            $('div.item p.text').each(function () {
+                $(this).find($val).addClass('highlight');
+            });
+        });
+    });
+</script>
+</body>
+</html>

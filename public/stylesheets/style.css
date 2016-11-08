@@ -1,0 +1,152 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+
+body {
+  padding: 50px;
+  font: 14px "Open Sans", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/bg1.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  color: white;
+  font-weight: 500;
+}
+
+a {color: #00B7FF;}
+
+.headerSection{
+  border: 2px solid #fff;
+  padding: 30px 30px 60px;
+  background: rgba(0,0,0,0.3);
+}
+.pHeader {
+  font-size: 48px;
+  color: #fff;
+  font-weight: 200;
+}
+
+h1 span {
+  font-weight: 600;
+  text-shadow: 2px 2px 0px #4099ff;
+}
+
+.highlight{
+  color: #4099ff;
+  font-weight: 500;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  padding: 7px 12px;
+}
+.btn-ghost:hover {
+  color: #fff;
+}
+
+.sForm {
+  width: 85%;
+  height: 36px;
+  border-radius: 0;
+  float: left;
+  margin-right: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #fff;
+  color: #ffffff;
+}
+.sForm::-webkit-input-placeholder {color: #ffffff; }
+
+@media screen and (max-width: 768px) {
+  .sForm {
+    width: 65%;
+  }
+}
+
+.showTweets {
+  margin-top: 50px;
+  padding: 15px;
+}
+
+.userTweet {
+  max-width: 350px;
+  background: #ffffff;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  color: #333;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 10px;
+  display: inline-block;
+  -moz-animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  margin: 15px;
+}
+.userTweet .profileImg {
+  margin: 5px;
+}
+.userTweet p.text {
+  margin-top: 10px;
+  display: inline-block;
+}
+.userTweet p.name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #777;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  margin: 0 auto;
+}
+footer p{
+  word-spacing: 2px;
+}
+
+
+.column {
+  float: left;
+}
+.size-1of4 {
+  width: 25%;
+}
+.size-1of3 {
+  width: 33.333%;
+}
+.size-1of2 {
+  width: 50%;
+}
+
+/* Configurate salvattore with media queries */
+@media screen and (max-width: 450px) {
+  #timeline[data-columns]::before {
+    content: '1 .column';
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 700px) {
+  #timeline[data-columns]::before {
+    content: '2 .column.size-1of2';
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 850px) {
+  #timeline[data-columns]::before {
+    content: '3 .column.size-1of3';
+  }
+}
+
+@media screen and (min-width: 851px) {
+  #timeline[data-columns]::before {
+    content: '4 .column.size-1of4';
+  }
+}
