@@ -57,7 +57,7 @@ app.post('/', function(req, res, next){
     });
 });
 
-app.listen(4300);
-console.log('4300 is the magic port');
+app.listen(process.env.PORT || 8888);
+
 
 module.exports = app;
